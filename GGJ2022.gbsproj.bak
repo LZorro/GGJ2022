@@ -82,14 +82,15 @@
                             "command": "EVENT_IF_TRUE",
                             "args": {
                                 "variable": "0",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__comment": false
                             },
                             "children": {
                                 "true": [
                                     {
                                         "command": "EVENT_PALETTE_SET_SPRITE",
                                         "args": {
-                                            "palette0": "default-bg-2",
+                                            "palette0": "default-bg-1",
                                             "palette1": "keep",
                                             "palette2": "keep",
                                             "palette3": "keep",
@@ -106,7 +107,7 @@
                                     {
                                         "command": "EVENT_PALETTE_SET_SPRITE",
                                         "args": {
-                                            "palette0": "default-bg-1",
+                                            "palette0": "default-bg-2",
                                             "palette1": "keep",
                                             "palette2": "keep",
                                             "palette3": "keep",
@@ -205,6 +206,14 @@
                                 "actorId": "$self$"
                             },
                             "id": "84a717d4-231e-4ada-920b-b0d6319c2ae0"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_SET_SPRITE",
+                            "args": {
+                                "actorId": "$self$",
+                                "spriteSheetId": "bdac9f3c-cce7-42f2-a81f-49efe1e3520f"
+                            },
+                            "id": "bc2ae5c3-001c-4ab6-ab66-012df5cc1e28"
                         }
                     ],
                     "updateScript": [
@@ -2397,7 +2406,7 @@
         "showCollisions": true,
         "showConnections": true,
         "worldScrollX": 28,
-        "worldScrollY": 3,
+        "worldScrollY": 0,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
