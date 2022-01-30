@@ -1459,6 +1459,33 @@
                         "__comment": true
                     },
                     "id": "2833df7f-5788-4b15-9f30-712b8228eed7"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "select"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "3ea1f033-80bb-4bb6-be23-62eb9ae4129d",
+                                    "$variable[0]$": "1",
+                                    "$variable[1]$": "2",
+                                    "$variable[2]$": "3",
+                                    "$variable[3]$": "4",
+                                    "$variable[4]$": "5"
+                                },
+                                "id": "d85f2e3b-6204-46c7-9f66-3c61f8928982"
+                            }
+                        ]
+                    },
+                    "id": "6b3c7209-23e4-4874-86d5-775ba73837fd"
                 }
             ],
             "playerHit1Script": [],
@@ -1562,8 +1589,11 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "Minion! Some \nmeddling teenagers\nbroke into the\nmansion.",
-                            "You, who exist in\nboth the realm of\nthe living and the\ndead, must keep\nthem here until\nmidnight...",
+                            "Minion! Some \nmeddling teenagers",
+                            "broke into the\nmansion.",
+                            "You, who exist in\nboth the realm of",
+                            "the living and the\ndead, must keep",
+                            "them here until\nmidnight...",
                             "And it will be a\nnight to remeber!"
                         ],
                         "avatarId": ""
@@ -4695,6 +4725,13 @@
             "triggers": [],
             "script": [
                 {
+                    "command": "EVENT_ACTOR_HIDE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "6c649d09-23f4-4a80-8d15-db9e2f01b0ed"
+                },
+                {
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
@@ -4750,7 +4787,7 @@
             "autoFadeSpeed": 1,
             "id": "adb201dd-1696-4984-9d72-607ff7b0090d",
             "x": 886.5,
-            "y": 234.5,
+            "y": 234,
             "actors": [],
             "triggers": [],
             "script": [
@@ -4814,7 +4851,8 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "Yes sir, your\nlichiness!\n\nNo one will\nescape!"
+                            "Yes sir, your\nlichiness!",
+                            "No one will\nescape!"
                         ],
                         "avatarId": ""
                     },
@@ -4889,7 +4927,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "playerSpriteSheetId": "bdac9f3c-cce7-42f2-a81f-49efe1e3520f"
         }
     ],
     "backgrounds": [
@@ -13076,6 +13115,71 @@
                     "id": "cfcbc6dc-69cd-4be3-a381-6aa4b49c1e1a"
                 }
             ]
+        },
+        {
+            "id": "3ea1f033-80bb-4bb6-be23-62eb9ae4129d",
+            "name": "Cheat",
+            "description": "end game rush",
+            "variables": {
+                "0": {
+                    "id": "0",
+                    "name": "Variable A"
+                },
+                "1": {
+                    "id": "1",
+                    "name": "Variable B"
+                },
+                "2": {
+                    "id": "2",
+                    "name": "Variable C"
+                },
+                "3": {
+                    "id": "3",
+                    "name": "Variable D"
+                },
+                "4": {
+                    "id": "4",
+                    "name": "Variable E"
+                }
+            },
+            "actors": {},
+            "script": [
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "0"
+                    },
+                    "id": "1b94831d-d3f1-47e1-aab6-b9185d784d24"
+                },
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "1"
+                    },
+                    "id": "092ba466-d8a1-438c-a191-1668454558f4"
+                },
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "2"
+                    },
+                    "id": "e80f0bcc-f444-4460-bf0b-f80efd62f20b"
+                },
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "3"
+                    },
+                    "id": "6dd1a90b-b92d-475c-b544-1135724640b9"
+                },
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "4"
+                    },
+                    "id": "33980ff5-8ead-4601-b5d6-06fb0f42adb2"
+                }
+            ]
         }
     ],
     "music": [
@@ -13234,8 +13338,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 507,
-        "worldScrollY": 99,
+        "worldScrollX": 918,
+        "worldScrollY": 0,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
