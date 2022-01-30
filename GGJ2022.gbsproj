@@ -1562,9 +1562,12 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "There are\nintruders in my",
-                            "dwelling. Go forth\nmy minion, and ",
-                            "make sure they do\nnot leave!"
+                            "Minion! Some \nmeddling teenagers",
+                            "broke into the\nmansion.",
+                            "You, who exist in\nboth the realm of",
+                            "the living and the\ndead, must keep",
+                            "them here until\nmidnight...",
+                            "And it will be a\nnight to remeber!"
                         ],
                         "avatarId": ""
                     },
@@ -4814,7 +4817,8 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "You got it, boss!"
+                            "Yes sir, your\nlichiness!",
+                            "No one will\nescape!"
                         ],
                         "avatarId": ""
                     },
@@ -13234,8 +13238,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1033,
-        "worldScrollY": 101,
+        "worldScrollX": 507,
+        "worldScrollY": 99,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,

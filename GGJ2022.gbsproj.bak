@@ -1562,9 +1562,9 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "There are\nintruders in my",
-                            "dwelling. Go forth\nmy minion, and ",
-                            "make sure they do\nnot leave!"
+                            "Minion! Some \nmeddling teenagers\nbroke into the\nmansion.",
+                            "You, who exist in\nboth the realm of\nthe living and the\ndead, must keep\nthem here until\nmidnight...",
+                            "And it will be a\nnight to remeber!"
                         ],
                         "avatarId": ""
                     },
@@ -4698,7 +4698,8 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "Excellent work,\nminion! You have\nsucceeded in your\ntask!\n\nWe shall now have\na wicked party\nwith our guests!"
+                            "Excellent work,\nminion! You have\nsucceeded in your\ntask!",
+                            "We shall now have\na wicked party\nwith our guests!"
                         ],
                         "avatarId": ""
                     },
@@ -4813,7 +4814,7 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "You got it, boss!"
+                            "Yes sir, your\nlichiness!\n\nNo one will\nescape!"
                         ],
                         "avatarId": ""
                     },
@@ -4844,7 +4845,7 @@
         },
         {
             "name": "End Game 3",
-            "backgroundId": "b6875587-b24f-457a-ae89-34538030d424",
+            "backgroundId": "cc871225-d5d6-4abd-b178-ad1ab5f4911f",
             "width": 20,
             "height": 18,
             "type": "TOPDOWN",
@@ -5025,6 +5026,15 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "Party_5.png"
+        },
+        {
+            "id": "cc871225-d5d6-4abd-b178-ad1ab5f4911f",
+            "name": "Party_6",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "Party_6.png"
         },
         {
             "id": "159a55ac-8a6f-4145-bc36-8d7286ab2b78",
@@ -13216,16 +13226,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "77fb7a3c-8571-4954-afb9-8607497964d3",
-        "startX": 19,
-        "startY": 19,
+        "startSceneId": "8632b0e6-1e96-4848-9377-413cadef12e6",
+        "startX": 0,
+        "startY": 0,
         "startMoveSpeed": 1,
         "startAnimSpeed": 7,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 937,
-        "worldScrollY": 9,
+        "worldScrollX": 507,
+        "worldScrollY": 99,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
