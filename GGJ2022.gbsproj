@@ -1541,7 +1541,8 @@
                             "select"
                         ],
                         "override": true,
-                        "__scriptTabs": "press"
+                        "__scriptTabs": "press",
+                        "__comment": true
                     },
                     "children": {
                         "true": [
@@ -19297,9 +19298,9 @@
         }
     ],
     "settings": {
-        "startSceneId": "77fb7a3c-8571-4954-afb9-8607497964d3",
-        "startX": 19,
-        "startY": 8,
+        "startSceneId": "8632b0e6-1e96-4848-9377-413cadef12e6",
+        "startX": 0,
+        "startY": 0,
         "startMoveSpeed": 1,
         "startAnimSpeed": 7,
         "startDirection": "down",
