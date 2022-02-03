@@ -1684,7 +1684,7 @@
                             "You, who exist in\nboth the realm of",
                             "the living and the\ndead, must keep",
                             "them here until\nmidnight...",
-                            "And it will be a\nnight to remeber!"
+                            "And it will be a\nnight to remember!"
                         ],
                         "avatarId": ""
                     },
@@ -2348,8 +2348,7 @@
                                                                             "command": "EVENT_TEXT",
                                                                             "args": {
                                                                                 "text": [
-                                                                                    "...",
-                                                                                    "I can't do it if\nyou're watching!"
+                                                                                    "Do you think I\nshould record this\nshow on videotape?"
                                                                                 ],
                                                                                 "avatarId": ""
                                                                             },
@@ -2371,7 +2370,8 @@
                                                                                         "command": "EVENT_TEXT",
                                                                                         "args": {
                                                                                             "text": [
-                                                                                                "All right. Here\nI go...I guess."
+                                                                                                "This episode is\nso good! I want to\ntalk with that",
+                                                                                                "girl and see what\nshe thinks!"
                                                                                             ],
                                                                                             "avatarId": "",
                                                                                             "__collapse": false
@@ -2391,9 +2391,9 @@
                                                                                         "command": "EVENT_TEXT",
                                                                                         "args": {
                                                                                             "text": [
-                                                                                                "I'll meet your \nfriend, but I\ndon't mingle well.",
-                                                                                                "I need an exit\nstrategy for when\nthings get",
-                                                                                                "awkward. I travel\nthrough screens."
+                                                                                                "Oh, someone else\nlikes TV too? She\nshould watch this",
+                                                                                                "new show! In fact,\nit's on now! Tune\nthe TVs to channel",
+                                                                                                "666. I'd do it,\nbut I can't, being\na ghost and all."
                                                                                             ],
                                                                                             "avatarId": ""
                                                                                         },
@@ -2517,49 +2517,86 @@
                     "collisionGroup": "",
                     "script": [
                         {
-                            "command": "EVENT_IF_FALSE",
+                            "command": "EVENT_IF_TRUE",
                             "args": {
-                                "variable": "18",
-                                "__collapseElse": true
+                                "variable": "13",
+                                "__collapseElse": false
                             },
                             "children": {
                                 "true": [
                                     {
-                                        "command": "EVENT_SET_TRUE",
+                                        "command": "EVENT_IF_FALSE",
                                         "args": {
-                                            "variable": "18"
+                                            "variable": "18",
+                                            "__collapseElse": false
                                         },
-                                        "id": "3b876c15-0492-4ff7-b365-8754e99e87e1"
-                                    },
-                                    {
-                                        "command": "EVENT_ACTOR_SET_STATE",
-                                        "args": {
-                                            "actorId": "$self$",
-                                            "spriteStateId": "TV On"
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_SET_TRUE",
+                                                    "args": {
+                                                        "variable": "18"
+                                                    },
+                                                    "id": "3b876c15-0492-4ff7-b365-8754e99e87e1"
+                                                },
+                                                {
+                                                    "command": "EVENT_ACTOR_SET_STATE",
+                                                    "args": {
+                                                        "actorId": "$self$",
+                                                        "spriteStateId": "TV On",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "fcf98316-25e7-4161-832b-2ebeb1e963b1"
+                                                },
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "You turn the TV\non. Click!"
+                                                        ],
+                                                        "avatarId": ""
+                                                    },
+                                                    "id": "26a65a14-4770-4851-b069-cb06e93a7ea9"
+                                                },
+                                                {
+                                                    "command": "EVENT_INC_VALUE",
+                                                    "args": {
+                                                        "variable": "19",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "47a54c9c-1328-4563-af4f-f38d4a6f513f"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "It's a show about\nbrothers who are \ndemon hunters."
+                                                        ],
+                                                        "avatarId": ""
+                                                    },
+                                                    "id": "ac9f4e9c-2070-49c5-8ca2-2b510baf86ae"
+                                                }
+                                            ]
                                         },
-                                        "id": "fcf98316-25e7-4161-832b-2ebeb1e963b1"
-                                    },
+                                        "id": "ab1e3fc5-e32c-4ea9-81a4-007713e817e3"
+                                    }
+                                ],
+                                "false": [
                                     {
                                         "command": "EVENT_TEXT",
                                         "args": {
                                             "text": [
-                                                "Click!"
+                                                "The TV sits\nquietly."
                                             ],
                                             "avatarId": ""
                                         },
-                                        "id": "26a65a14-4770-4851-b069-cb06e93a7ea9"
-                                    },
-                                    {
-                                        "command": "EVENT_INC_VALUE",
-                                        "args": {
-                                            "variable": "19"
-                                        },
-                                        "id": "47a54c9c-1328-4563-af4f-f38d4a6f513f"
+                                        "id": "294d721e-e5b4-442a-9678-638ad599c246"
                                     }
-                                ],
-                                "false": []
+                                ]
                             },
-                            "id": "ab1e3fc5-e32c-4ea9-81a4-007713e817e3"
+                            "id": "7ac81858-8b3b-4d2b-85a8-22804f27cf5a"
                         }
                     ],
                     "startScript": [
@@ -3896,12 +3933,11 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "This episode is\ngreat! The long\nhaired ghost girl",
-                                                            "is adorable!"
+                                                            "We're thinking of\nstarting a fan\nclub.Want to join?"
                                                         ],
                                                         "avatarId": ""
                                                     },
-                                                    "id": "74a573ed-5a88-4387-9233-ee7d74178471"
+                                                    "id": "cf586191-36a3-4307-bdec-5c48e555ad4d"
                                                 },
                                                 {
                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
@@ -3940,11 +3976,12 @@
                                                                             "command": "EVENT_TEXT",
                                                                             "args": {
                                                                                 "text": [
-                                                                                    "Oh, which show is\nthis? It has such\namazing effects!"
+                                                                                    "This episode is\ngreat! The long\nhaired girl is",
+                                                                                    "adorable and\nreally knows her\nstuff!"
                                                                                 ],
                                                                                 "avatarId": ""
                                                                             },
-                                                                            "id": "0266ab67-202f-428a-a307-607559cbe7fd"
+                                                                            "id": "74a573ed-5a88-4387-9233-ee7d74178471"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_SET_TRUE",
@@ -3956,15 +3993,40 @@
                                                                     ],
                                                                     "false": [
                                                                         {
-                                                                            "command": "EVENT_TEXT",
+                                                                            "command": "EVENT_IF_TRUE",
                                                                             "args": {
-                                                                                "text": [
-                                                                                    "What-everrr. I'm\nreally missing my",
-                                                                                    "telenovelas right\nnow."
-                                                                                ],
-                                                                                "avatarId": ""
+                                                                                "variable": "17",
+                                                                                "__collapseElse": false
                                                                             },
-                                                                            "id": "cf0a259e-17b3-4358-a072-5b8ce9c7a973"
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_TEXT",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "Oh, which show is\nthis? It has such\namazing effects!",
+                                                                                                "I'd love to talk\nabout this more\nwith someone!"
+                                                                                            ],
+                                                                                            "avatarId": ""
+                                                                                        },
+                                                                                        "id": "0266ab67-202f-428a-a307-607559cbe7fd"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_TEXT",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "What-everrr. I'm\nreally missing my",
+                                                                                                "telenovelas right\nnow."
+                                                                                            ],
+                                                                                            "avatarId": ""
+                                                                                        },
+                                                                                        "id": "cf0a259e-17b3-4358-a072-5b8ce9c7a973"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "48d132d7-8add-44dc-b7f1-aa1257269272"
                                                                         }
                                                                     ]
                                                                 },
@@ -4262,49 +4324,87 @@
                     "collisionGroup": "",
                     "script": [
                         {
-                            "command": "EVENT_IF_FALSE",
+                            "command": "EVENT_IF_TRUE",
                             "args": {
-                                "variable": "17",
-                                "__collapseElse": true
+                                "variable": "13",
+                                "__collapseElse": false
                             },
                             "children": {
                                 "true": [
                                     {
-                                        "command": "EVENT_SET_TRUE",
+                                        "command": "EVENT_IF_FALSE",
                                         "args": {
-                                            "variable": "17"
+                                            "variable": "17",
+                                            "__collapseElse": false
                                         },
-                                        "id": "58e3a5ae-fca3-4b09-bb93-406c8ef3f45a"
-                                    },
-                                    {
-                                        "command": "EVENT_ACTOR_SET_STATE",
-                                        "args": {
-                                            "actorId": "$self$",
-                                            "spriteStateId": "TV On"
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_SET_TRUE",
+                                                    "args": {
+                                                        "variable": "17",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "58e3a5ae-fca3-4b09-bb93-406c8ef3f45a"
+                                                },
+                                                {
+                                                    "command": "EVENT_ACTOR_SET_STATE",
+                                                    "args": {
+                                                        "actorId": "$self$",
+                                                        "spriteStateId": "TV On",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "e26cc5c1-4766-4837-b446-60441899e366"
+                                                },
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "You turn the TV\non. Click!"
+                                                        ],
+                                                        "avatarId": ""
+                                                    },
+                                                    "id": "33586141-019e-48f3-8c23-734f195acd75"
+                                                },
+                                                {
+                                                    "command": "EVENT_INC_VALUE",
+                                                    "args": {
+                                                        "variable": "19",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "44676dcd-b5bd-41f9-915b-91eba4f08bc2"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "It's a show about\nbrothers who are \ndemon hunters."
+                                                        ],
+                                                        "avatarId": ""
+                                                    },
+                                                    "id": "af9e5e4b-069b-45ea-820f-4b4e0ba8d4f2"
+                                                }
+                                            ]
                                         },
-                                        "id": "e26cc5c1-4766-4837-b446-60441899e366"
-                                    },
+                                        "id": "c94c093f-da00-4019-a576-6f43aa78be92"
+                                    }
+                                ],
+                                "false": [
                                     {
                                         "command": "EVENT_TEXT",
                                         "args": {
                                             "text": [
-                                                "Click!"
+                                                "The TV sits\nquietly."
                                             ],
                                             "avatarId": ""
                                         },
-                                        "id": "33586141-019e-48f3-8c23-734f195acd75"
-                                    },
-                                    {
-                                        "command": "EVENT_INC_VALUE",
-                                        "args": {
-                                            "variable": "19"
-                                        },
-                                        "id": "44676dcd-b5bd-41f9-915b-91eba4f08bc2"
+                                        "id": "39df0904-303d-40d3-b5b1-bc2df9f4f73b"
                                     }
-                                ],
-                                "false": []
+                                ]
                             },
-                            "id": "c94c093f-da00-4019-a576-6f43aa78be92"
+                            "id": "460362f0-0e72-40d7-9f17-95816e18bcea"
                         }
                     ],
                     "startScript": [
@@ -5584,7 +5684,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Bedroom3.png"
+            "filename": "Bedroom3.png",
+            "tileColors": []
         },
         {
             "id": "01c05c63-2e1f-4dfc-93a7-ce06c0d127c6",
@@ -5673,7 +5774,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Lounge5.png"
+            "filename": "Lounge5.png",
+            "tileColors": []
         },
         {
             "id": "04f10bb9-6e36-4d62-ac1d-89a78154a4d4",
@@ -5682,7 +5784,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "New_Party.png"
+            "filename": "New_Party.png",
+            "tileColors": []
         },
         {
             "id": "62c4bf13-bc6e-48e2-94ee-9dde90553cea",
@@ -5691,7 +5794,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "New_Party_2.png"
+            "filename": "New_Party_2.png",
+            "tileColors": []
         },
         {
             "id": "74f09a65-4762-4590-a1a7-7b23fd0891b2",
@@ -5700,7 +5804,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "New_Party_3.png"
+            "filename": "New_Party_3.png",
+            "tileColors": []
         },
         {
             "id": "c5a4e5ce-ed8f-4daa-90ce-d50482e5faa2",
@@ -19306,8 +19411,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 420,
-        "worldScrollY": 100,
+        "worldScrollX": 692,
+        "worldScrollY": 184,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -19336,9 +19441,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            511,
-            361,
-            204
+            333,
+            235,
+            133
         ],
         "showNavigator": true,
         "defaultFontId": "4bd653f0-e08d-424e-9e5b-c1f3aaa21e47",
